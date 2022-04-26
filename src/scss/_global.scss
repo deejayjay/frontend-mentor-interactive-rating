@@ -1,0 +1,416 @@
+// This document contains the styles that are global to all pages
+@use "./colors" as *;
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: $grey;
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 0 10px 0 $grey;
+}
+
+main {
+  flex: 1;
+  margin-top: 61px;
+}
+
+.header-container__appbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.header-title__wrapper {
+  font-size: 0;
+}
+
+.header-logo__wrapper {
+  display: flex;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.header-logo {
+  width: 2rem;
+  margin-left: -5px;
+}
+
+.header-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.header-title--pink {
+  color: $pink;
+}
+
+.header-title--green {
+  color: $green;
+}
+
+.header-title--blue {
+  color: $blue;
+}
+
+.togglebtn-menu {
+  font-size: 1.875rem;
+  color: $dark-grey;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.user-icon {
+  display: none;
+}
+
+.main-container__wrapper {
+  padding: 1rem;
+  background-color: $white;
+}
+
+.main-sidebar {
+  position: fixed;
+  top: 61px;
+  left: 0;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: $white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in;
+  border-top: 3px solid $white;
+  border-bottom: 1px solid $white;
+
+  i {
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+}
+
+.main-sidebar li {
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $gold;
+  }
+}
+
+.main-sidebar li > a {
+  color: $grey;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.main-sidebar li {
+  border-bottom: 1px solid $lighter-grey;
+}
+
+.main-sidebar li:last-of-type {
+  padding-bottom: 1.5rem;
+  border-bottom: none;
+}
+
+.active-sidebar {
+  border-color: $gold;
+  max-height: 100vh;
+  z-index: 99;
+}
+
+.main-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: $grey;
+}
+
+.btn-global {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+  text-align: center;
+  color: $dark-grey !important;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  i {
+    margin-right: 0.5rem;
+  }
+}
+
+.btn-global--green {
+  background-color: $green;
+
+  &:hover {
+    background-color: $green-80;
+  }
+}
+
+.btn-global--gold {
+  background-color: $gold;
+
+  &:hover {
+    background-color: $gold-70;
+  }
+}
+
+.btn-global--grey {
+  background-color: $light-grey;
+
+  &:hover {
+    background-color: $lighter-grey;
+  }
+}
+
+.btn-global--red {
+  background-color: $red;
+
+  &:hover {
+    background-color: $red-70;
+  }
+}
+
+.toys-cards__container {
+  margin-top: 1rem;
+}
+
+.toys-card {
+  padding: 1rem;
+  box-shadow: 0 0 10px 2px $light-grey;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  color: $grey;
+  position: relative;
+}
+
+.toys-actions {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  i {
+    display: none;
+    font-size: 1.25rem;
+  }
+
+  i:first-of-type {
+    margin-right: 0.5rem;
+  }
+}
+
+.toys-card:hover {
+  i {
+    display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.toys-card__top {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.toy-image__wrapper {
+  width: 35%;
+  box-shadow: 0 0 10px 0 $light-grey;
+  margin-right: 1rem;
+}
+
+.toy-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.toy-age-group {
+  margin-bottom: 1.25rem;
+}
+
+.toy-price {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.btn-add-to-cart {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.btn-add-to-cart > i {
+  margin-right: 0.5rem;
+}
+
+footer {
+  background-color: $light-grey;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.lbl-status {
+  color: $white;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+
+  i {
+    position: absolute;
+    right: 1rem;
+    top: 0.6125rem;
+  }
+}
+
+.label-status--green {
+  background-color: $status-green;
+}
+
+.label-status--red {
+  background-color: $status-red;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-title__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .main-title {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+
+  .btn-global {
+    width: auto;
+    display: inline-block;
+  }
+
+  .toys-cards__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(20rem, 1fr));
+    gap: 1rem;
+
+    .toys-card {
+      margin-bottom: 0;
+
+      .btn-add-to-cart {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .header-container__appbar,
+  .main-container__wrapper,
+  .footer-content__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .togglebtn-menu {
+    display: none;
+  }
+
+  .user-icon {
+    display: inline-block;
+    font-size: 1.875rem;
+  }
+
+  .main-container__wrapper {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  .main-sidebar {
+    position: static;
+    max-width: 10rem;
+    max-height: none;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-top: 4rem;
+    border-right: 1px solid $grey;
+
+    li {
+      border-bottom: 1px solid $white;
+
+      &:last-of-type {
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    li:hover {
+      background-color: $white;
+      border-bottom: 1px solid $grey;
+    }
+
+    i {
+      width: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .toys-cards__container {
+    grid-template-columns: repeat(3, minmax(20rem, 1fr));
+  }
+
+  .toy-image__wrapper,
+  .toy-info__wrapper {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
