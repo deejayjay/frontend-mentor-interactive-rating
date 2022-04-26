@@ -1,6 +1,104 @@
 @use "./colors" as *;
 
 body {
-  background-color: rebeccapurple;
-  color: whitesmoke;
+  background-color: $very-dark-blue;
+  color: $light-grey;
+  font-family: "Overpass", sans-serif;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  background-color: $dark-blue;
+  padding: 1.5rem;
+  border-radius: 0.9375rem;
+  max-width: 412px;
+}
+
+.star-icon {
+  background-color: $medium-blue;
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+h2 {
+  color: $pure-white;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.625rem;
+}
+
+p {
+  font-size: 0.875rem;
+}
+
+.rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $medium-blue;
+    width: clamp(42px, 11.25vw, 51px);
+    height: clamp(42px, 11.25vw, 51px);
+    border-radius: 50%;
+    font-size: 0.875rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.btn-submit {
+  background-color: $orange;
+  border: none;
+  appearance: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  border-radius: 22.5px;
+  width: 100%;
+  text-transform: uppercase;
+  color: $pure-white;
+  font-size: 0.875rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.thank-you-wrapper {
+  text-align: center;
+}
+
+.thank-you-img-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0.625rem 0 1.5rem;
+}
+
+.rating-result {
+  text-align: center;
+  color: $orange;
+  background-color: $medium-blue;
+  border-radius: 22.5px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+.thank-you-note {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0.5rem;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
 }
