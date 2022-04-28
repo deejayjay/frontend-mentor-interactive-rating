@@ -439,12 +439,12 @@ main {
 
 h2 {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 7.767vw, 1.75rem);
   margin: 1rem 0 0.625rem;
 }
 
 p {
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 3.733vw, 0.9375rem);
 }
 
 .rating-wrapper {
@@ -470,13 +470,14 @@ p {
   display: flex;
   justify-content: space-between;
   margin: 1.375rem 0;
+  position: relative;
 }
 
 .rating-radio-btn {
   position: relative;
   cursor: pointer;
   user-select: none;
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 3.733vw, 1rem);
   color: #ffffff;
   font-weight: 700;
   z-index: 10;
@@ -511,6 +512,19 @@ p {
   background-color: #fc7614;
 }
 
+.rating-warning {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #bd1717;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  width: max-content;
+  transition: all 0.5s ease-out;
+}
+
 .btn-submit {
   background-color: #fc7614;
   border: none;
@@ -521,7 +535,7 @@ p {
   width: 100%;
   text-transform: uppercase;
   color: #ffffff;
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 3.733vw, 0.9375rem);
   font-weight: 700;
   letter-spacing: 0.15rem;
   margin-bottom: 0.75rem;
@@ -537,6 +551,7 @@ p {
 }
 .thank-you-wrapper h2 {
   margin-top: 1.5rem;
+  font-size: clamp(1.5rem, 7.767vw, 1.75rem);
 }
 
 .thank-you-img-wrapper {
@@ -552,10 +567,12 @@ p {
   border-radius: 22.5px;
   padding: 0.5rem 1rem;
   display: inline-block;
+  font-size: clamp(0.875rem, 3.733vw, 0.9375rem);
 }
 
 .thank-you-note {
   margin-bottom: 0.5rem;
+  font-size: clamp(0.875rem, 3.733vw, 0.9375rem);
 }
 
 footer {
